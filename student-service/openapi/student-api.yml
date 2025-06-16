@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: Student Service API
+  version: 1.0.0
+paths:
+  /students:
+    post:
+      summary: Create a new student
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Student created
+  /students/{id}:
+    get:
+      summary: Get student by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Student details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        studentId:
+          type: integer
+        studentName:
+          type: string
+        grade:
+          type: string
+        mobileNumber:
+          type: string
+        schoolName:
+          type: string

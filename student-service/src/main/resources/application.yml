@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:student-manager
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    # if using HikariCP (Spring Boot default)
+    hikari:
+      maximum-pool-size: 200  # match your max concurrency
+      minimum-idle: 50
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  profiles:
+    active: dev
+
+  application:
+    name: student-service
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    # Embedded Tomcat thread pool
+  tomcat:
+    threads:
+      max: 200      # allow up to 200 concurrent worker threads
+      min-spare: 50 # keep at least 50 idle threads ready
