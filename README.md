@@ -33,7 +33,11 @@ Get the outpuut using GET:
 
 Sample input for getting  student information:
 
-http://localhost:8080/api/students/987651
+http://localhost:8080/api/students/12345
+
+{
+   "studentId": 12345
+}
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -52,12 +56,12 @@ http://localhost:8081/api/swagger-ui/index.html#/
 
 Postman URL
 --------------
-http://localhost:8081/api/fees/987651?amount=9000
+http://localhost:8081/api/fees/12345?amount=9000
 
 Sample input for POST:
 
 {
-  "studentId": 987651,
+  "studentId": 12345,
   "amount": 9000
 }
 
@@ -65,4 +69,8 @@ Get the outpuut using GET:
 
 Sample input for getting student payment information:
 
-http://localhost:8080/api/students/987651
+http://localhost:8081/api/fees/12345?studentId=12345
+
+{
+  "studentId": 12345
+}
