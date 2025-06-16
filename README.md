@@ -6,6 +6,7 @@ HOW TO START THE MICROSERVICES
 1. Start the student microservice first so that you can add student information.
 
    C:\Projects\student.management\student-service>mvn clean install
+   
    C:\Projects\student.management\student-service>mvn spring-boot:run
 
 Then you can use this microservice using either swagger or postman.
