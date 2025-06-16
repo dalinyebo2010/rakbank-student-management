@@ -19,6 +19,10 @@ spring:
   profiles:
     active: dev
 
+  mvc:
+    async:
+      request-timeout: 60000  # in milliseconds
+
   application:
     name: student-service
 

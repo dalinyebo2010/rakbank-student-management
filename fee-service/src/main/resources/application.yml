@@ -16,6 +16,10 @@ spring:
     show-sql: true
     open-in-view: false
 
+  mvc:
+    async:
+      request-timeout: 60000  # in milliseconds
+
   profiles:
     active: dev
 
